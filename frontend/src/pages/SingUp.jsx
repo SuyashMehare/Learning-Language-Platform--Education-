@@ -67,10 +67,7 @@ function SignUp() {
         }
 
         try {
-            const signUpEndpoint = "https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup";
-            
-            console.log("Hitting sign up endpoint: ", signUpEndpoint);
-            const res = await axios.post(signUpEndpoint,{
+            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup",{
                 email,
                 preferences
             })
@@ -88,7 +85,7 @@ function SignUp() {
         console.log(res);        
     }
     useEffect(() => {
-        axios.get("http://localhost:5000/api/v1/platform/metadata")
+        axios.get("https://learning-language-platform-education-kqws.onrender.com/v1/platform/metadata")
             .then((res) => {
                 // console.log(res.data.data.metadata);
                 
