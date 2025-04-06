@@ -85,7 +85,7 @@ function SignUp() {
         console.log(res);        
     }
     useEffect(() => {
-        axios.get("https://learning-language-platform-education-kqws.onrender.com/v1/platform/metadata")
+        axios.get("https://learning-language-platform-education-kqws.onrender.com/api/v1/platform/metadata")
             .then((res) => {
                 // console.log(res.data.data.metadata);
                 
