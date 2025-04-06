@@ -67,7 +67,7 @@ function SignUp() {
         }
 
         try {
-            const res = await axios.post("http://localhost:5000/api/v1/user/signup",{
+            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup",{
                 email,
                 preferences
             })

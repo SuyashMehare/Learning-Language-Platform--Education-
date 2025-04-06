@@ -29,7 +29,7 @@ function Vocabulary() {
         // console.log(`http://localhost:5000/${postToAPI}`, lastWord.id);
 
         try {
-            const res = await axios.patch(`http://localhost:5000/${postToAPI}`, {
+            const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
                 vocabularyId: lastWord.id,
                 email: "user3@gmail.com",
                 points: 1,

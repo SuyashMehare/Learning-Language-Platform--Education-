@@ -1,8 +1,17 @@
 import axios from "axios";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { CardsOfOthers } from "../Components/CardsOfOthers";
 
 function Others() {
+    const navigate = useNavigate()
+    useEffect(() => {
+        const user = localStorage.getItem("llp-user")
+        if (!user) {
+            navigate("/login")
+        }
+    },[])
+
     return(<>
        <div class="flex flex-wrap justify-center gap-10 mt-14">
         <CardsOfOthers 

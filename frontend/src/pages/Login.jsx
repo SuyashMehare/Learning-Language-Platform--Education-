@@ -20,12 +20,13 @@ function Login() {
             }
     
             try {
-                const res = await axios.post("http://localhost:5000/api/v1/user/login",{email})
+                const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/login",{email})
                 console.log(res);
                 
                 if(res.data.success) {
                     setSuccess("User logged in")
                     localStorage.setItem("llp-user", email);
+                    navigate("/home")
                 }
 
             } catch (error) {

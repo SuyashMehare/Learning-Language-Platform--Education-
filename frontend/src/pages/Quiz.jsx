@@ -29,7 +29,7 @@ function Quiz() {
         // console.log(correctOption,selectedOption, correctOption === selectedOption);
         
         try {
-            const res = await axios.patch(`http://localhost:5000/${postToAPI}`, {
+            const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
                 vocabularyId: lastQuiz.id,
                 email: "user3@gmail.com",
                 points: lastQuiz.points,
