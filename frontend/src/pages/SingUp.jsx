@@ -67,7 +67,10 @@ function SignUp() {
         }
 
         try {
-            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup",{
+            const signUpEndpoint = "https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup";
+            console.log("Hitting sign up endpoint ", signUpEndpoint);
+            
+            const res = await axios.post(signUpEndpoint,{
                 email,
                 preferences
             })
