@@ -27,11 +27,11 @@ function Vocabulary() {
         const correctOption = lastWord.synonyms;
         const selectedOption = option;
         // console.log(`http://localhost:5000/${postToAPI}`, lastWord.id);
-
+        const user = localStorage.getItem("llp-user")
         try {
             const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
                 vocabularyId: lastWord.id,
-                email: "user3@gmail.com",
+                email: user,
                 points: 1,
                 isAnswerCorrect: correctOption === selectedOption
             });

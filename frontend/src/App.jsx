@@ -1,4 +1,4 @@
-import { Home, NavBar, Others, Quiz, SignUp, UserProgress, Vocabulary } from './pages'
+import { Home, NavBar, Others, Quiz, UserProgress, Vocabulary,SignUp } from './pages'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from './pages'
 
@@ -14,8 +14,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/signup" element={<SignUp/>} />
               <Route path="/login" element={<Login/>} />
+              <Route path="/signup" element={<SignUp/>} />
               <Route path="/others" element={<Others/>} />
               <Route path="/client/vocabulary/solved" element={<Vocabulary/>} />
               <Route path="/client/vocabulary/unsolved" element={<Vocabulary/>} />

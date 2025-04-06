@@ -27,11 +27,11 @@ function Quiz() {
         const selectedOption = option;
         // console.log(`http://localhost:5000/${postToAPI}`, lastQuiz.id, lastQuiz.points);
         // console.log(correctOption,selectedOption, correctOption === selectedOption);
-        
+        const user = localStorage.getItem("llp-user")
         try {
             const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
                 vocabularyId: lastQuiz.id,
-                email: "user3@gmail.com",
+                email: user,
                 points: lastQuiz.points,
                 isAnswerCorrect: (correctOption === selectedOption)
             });

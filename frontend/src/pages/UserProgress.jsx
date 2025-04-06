@@ -8,8 +8,9 @@ function UserProgress() {
     const [userProgress, setUserProgress] = useState({})
 
     async function fetchProgress() {
+        const user = localStorage.getItem("llp-user")
         try {
-            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/profile", { email: "user3@gmail.com" })
+            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/profile", { email: user })
             const data = res.data;
 
             console.log(data[0]);
