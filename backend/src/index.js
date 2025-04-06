@@ -3,7 +3,6 @@ import { app } from "./app.js";
 import { connectdb } from "./db/index.js";
 dotenv.config()
 
-
 connectdb()
 .then(() => {
     app.listen(process.env.PORT, () => {

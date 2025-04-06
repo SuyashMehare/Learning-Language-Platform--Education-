@@ -6,10 +6,10 @@ import cors from "cors";
 const app = express();
 console.log("hitted");
 
-// var corsOptions = {
-//     origin: 'http://example.com',
-// }
-app.use(cors())
+app.use(cors({
+    origin: process.env.allowedOrigin,
+}))
+
 app.use(express.json())
 // app.get("/api/v1/")
 app.use("/api/v1/user", userRouter);
