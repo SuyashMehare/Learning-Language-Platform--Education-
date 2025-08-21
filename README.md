@@ -9,7 +9,6 @@ Frontend | Backend | Fullstack
 ## Deplolyed App
 Frontend: https://lovely-kheer-efe84f.netlify.app/
 Backend: https://learning-language-platform-education-kqws.onrender.com
-Database: `mongodb+srv://suyash:<db_password>@masaicluster.hsmnxex.mongodb.net/llp?retryWrites=true&w=majority&appName=MasaiCluster`
 
 ## Directory Structure
 
@@ -64,37 +63,30 @@ https://youtu.be/VvK7WniAGJg
 - Interactive Quizzes and Exercises 
 - User Authentication
 
-## design decisions or assumptions
-List your design desissions & assumptions
 
-## Installation & Getting started
-Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
+---
 
-```bash
-npm install my-project
-cd my-project
-npm start
-```
 
-## Usage
-Provide instructions and examples on how to use your project.
 
-```bash
-# Example
-```
+## Technology Stack
+List and provide a brief overview of the technologies used in the project.
 
-Include screenshots as necessary.
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Nodemon
 
-## Credentials
-Provide user credentials for autheticated pages
+- Axios
+- React JS
+- React DOM
+- React Route DOM
+- Tailwind Css
 
-## APIs Used
-If your application relies on external APIs, document them and include any necessary links or references.
+---
 
 ## API Endpoints
-## API Endpoints
-
-In case of Backend Applications, here is a list of your API endpoints, methods, brief descriptions, and examples of request/response.
+Here is a list of your API endpoints, methods, brief descriptions, and examples of request/response.
 
 ---
 
@@ -225,21 +217,4 @@ In case of Backend Applications, here is a list of your API endpoints, methods, 
 **GET** `/api/v1/platform/metadata` – Fetch metadata (labels, categories, difficulty levels)  
 **Request:** _None_
 
----
 
-
-
-## Technology Stack
-List and provide a brief overview of the technologies used in the project.
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Nodemon
-
-- Axios
-- React JS
-- React DOM
-- React Route DOM
-- Tailwind Css
