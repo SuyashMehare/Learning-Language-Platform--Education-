@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function Vocabulary() {
     const location = useLocation();
@@ -29,7 +30,7 @@ function Vocabulary() {
         // console.log(`http://localhost:5000/${postToAPI}`, lastWord.id);
         const user = localStorage.getItem("llp-user")
         try {
-            const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
+            const res = await axios.patch(BACKEND_URLS.USER.VOCABULARY_SUBMIT, {
                 vocabularyId: lastWord.id,
                 email: user,
                 points: 1,

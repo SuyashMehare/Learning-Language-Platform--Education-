@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 
 import axios from "axios";
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function SignUp() {
     const [err, setErr] = useState("");
@@ -67,7 +68,7 @@ function SignUp() {
         }
 
         try {
-            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/signup",{
+            const res = await axios.post(BACKEND_URLS.USER.SIGNUP, {
                 email,
                 preferences
             })
@@ -85,7 +86,7 @@ function SignUp() {
         console.log(res);        
     }
     useEffect(() => {
-        axios.get("https://learning-language-platform-education-kqws.onrender.com/api/v1/platform/metadata")
+        axios.get(BACKEND_URLS.PLATFORM.METADATA)
             .then((res) => {
                 // console.log(res.data.data.metadata);
                 

@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect } from "react";
 import {  useNavigate } from 'react-router-dom';
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function CardsOfOthers({ label, navLink, fetchDataEndpoint, postDataEndPoint, customCss }) {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ function CardsOfOthers({ label, navLink, fetchDataEndpoint, postDataEndPoint, cu
     async function handleClick() {
         try {
             const user = localStorage.getItem("llp-user")
-            const res = await axios.post(`https://learning-language-platform-education-kqws.onrender.com/${fetchDataEndpoint}`, { email: user })
+            const res = await axios.post(fetchDataEndpoint, { email: user })
             navigate(`${navLink}`, { state: { data: res.data, fetchDataEndpoint: fetchDataEndpoint, postDataEndPoint: postDataEndPoint } });
             //
         } catch (error) {

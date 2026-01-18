@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function Login() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function Login() {
             }
     
             try {
-                const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/login",{email})
+                const res = await axios.post(BACKEND_URLS.USER.LOGIN, {email})
                 console.log(res);
                 
                 if(res.data.success) {

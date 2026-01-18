@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { StreakAndGoalCard } from "../Components/Dashboard/StreakAndGoalCard"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function UserProgress() {
     const navigate = useNavigate()
@@ -10,7 +11,7 @@ function UserProgress() {
     async function fetchProgress() {
         const user = localStorage.getItem("llp-user")
         try {
-            const res = await axios.post("https://learning-language-platform-education-kqws.onrender.com/api/v1/user/profile", { email: user })
+            const res = await axios.post(BACKEND_URLS.USER.PROFILE, { email: user })
             const data = res.data;
 
             console.log(data[0]);

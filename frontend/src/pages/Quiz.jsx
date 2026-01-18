@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom"
+import { BACKEND_URLS } from "../constants/backend_urls";
 
 function Quiz() {
     const location = useLocation() ; 
@@ -29,7 +30,7 @@ function Quiz() {
         // console.log(correctOption,selectedOption, correctOption === selectedOption);
         const user = localStorage.getItem("llp-user")
         try {
-            const res = await axios.patch(`https://learning-language-platform-education-kqws.onrender.com/${postToAPI}`, {
+            const res = await axios.patch(BACKEND_URLS.USER.QUIZ_SUBMIT, {
                 vocabularyId: lastQuiz.id,
                 email: user,
                 points: lastQuiz.points,
