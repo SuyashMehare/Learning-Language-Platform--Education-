@@ -7,7 +7,7 @@ const app = express();
 console.log("hitted");
 
 app.use(cors({
-    origin: "https://lovely-kheer-efe84f.netlify.app",
+    origin: "*",
 }))
 
 app.use(express.json())

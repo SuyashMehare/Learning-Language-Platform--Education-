@@ -11,7 +11,7 @@ const quizSchema = new mongoose.Schema({
   language: {
     type: String,
     enum: ['es', 'en'], // Spanish or English
-    default: 'es'
+    default: 'en'
   },
   question: {
     type: String,

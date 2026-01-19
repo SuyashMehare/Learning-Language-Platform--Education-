@@ -110,7 +110,7 @@ const userSchema = new Schema({
     language: {
       type: String,
       enum: ['es', 'en'],
-      default: 'es'
+      default: 'en'
     },
     dailyGoalMinutes: {
       type: Number,
