@@ -74,9 +74,9 @@ import { CATEGORIES, DIFFICULTIES, LABELS } from "./enums.js";
   });
 
 
-lectureSchema.index({ language: 1, categories: 1 });
-lectureSchema.index({ difficulty: 1 }); // todo: remove it if not required
-lectureSchema.index({ lectureId: 1 });
+// lectureSchema.index({ language: 1, categories: 1 });
+// lectureSchema.index({ difficulty: 1 }); // todo: remove it if not required
+// lectureSchema.index({ lectureId: 1 });
 
 const Lecture = mongoose.model('Lecture', lectureSchema);
 

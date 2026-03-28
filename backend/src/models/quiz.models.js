@@ -80,9 +80,9 @@ const quizSchema = new mongoose.Schema({
 });
 
 
-quizSchema.index({ difficulty: 1 });
-quizSchema.index({ points: 1 });
-quizSchema.index({ labels: 1, categories: 1 });
+// quizSchema.index({ difficulty: 1 });
+// quizSchema.index({ points: 1 });
+// quizSchema.index({ labels: 1, categories: 1 });
 
 const Quiz = mongoose.model('Quiz', quizSchema);
 

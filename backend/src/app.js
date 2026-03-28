@@ -1,6 +1,7 @@
 import express from "express";
 import { userRouter } from "./routes/user.routes.js";
 import { platformRouter } from "./routes/platform.routes.js";
+import { adminRouter } from "./routes/admin.routes.js";
 import cors from "cors";
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json())
 // app.get("/api/v1/")
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/platform", platformRouter);
+app.use("/api/v1/admin", adminRouter);
 
 // todo: fallback middleware so that not found url handle
 export { 

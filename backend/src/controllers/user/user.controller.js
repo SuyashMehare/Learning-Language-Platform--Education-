@@ -83,8 +83,8 @@ async function loginUser(req, res) {
         });
     }
 
-    // Issue JWT
-    const token = jwt.sign({ userId: user.userId, email: user.email }, process.env.JWT_SECRET || 'dev_jwt_secret', { expiresIn: '7d' });
+    // Issue JWT (include role)
+    const token = jwt.sign({ userId: user.userId, email: user.email, role: 'user' }, process.env.JWT_SECRET || 'dev_jwt_secret', { expiresIn: '7d' });
 
     res.status(200).json({
         success: true,

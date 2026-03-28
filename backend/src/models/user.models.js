@@ -139,8 +139,8 @@ const userSchema = new Schema({
 });
 
 // Indexes
-userSchema.index({ userId: 1 });
-userSchema.index({ email: 1 }, {sparse: true });
+// userSchema.index({ userId: 1 });
+// userSchema.index({ email: 1 }, {sparse: true });
 
 
 userSchema.pre('save', function(next) {

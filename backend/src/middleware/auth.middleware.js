@@ -27,3 +27,13 @@ export function authenticateJWT(req, res, next) {
     return res.status(401).json({ success: false, message: 'Invalid or expired token' });
   }
 }
+
+export function authorizeRoles(...allowedRoles) {
+  return function (req, res, next) {
+    const role = req.user?.role;
+    if (!role || !allowedRoles.includes(role)) {
+      return res.status(403).json({ success: false, message: 'Forbidden: insufficient permissions' });
+    }
+    next();
+  };
+}
