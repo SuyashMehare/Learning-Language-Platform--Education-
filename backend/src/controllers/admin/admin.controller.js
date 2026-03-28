@@ -176,4 +176,16 @@ async function getAdminProfile(req, res) {
     }
 }
 
-export { signUpAdmin, loginAdmin, getAdminProfile };
+async function uploadLecture(req, res) {
+    // TODO: Implement lecture upload with metadata
+}
+
+async function updateLecture(req, res) {
+    // TODO: Implement lecture update
+}
+
+async function deleteLecture(req, res) {
+    // TODO: Implement lecture deletion
+}
+
+export { signUpAdmin, loginAdmin, getAdminProfile, uploadLecture, updateLecture, deleteLecture };
