@@ -60,10 +60,10 @@ import { VOCABULARYTAGS,DIFFICULTIES,LABELS } from "./enums.js";
 
 
 
-    vocabularySchema.index({ difficulty: 1 });
+    // vocabularySchema.index({ difficulty: 1 });
     // vocabularySchema.index({ tags: 1 }); // Added category index
-    vocabularySchema.index({ labels: 1 }); // Added label index
-    vocabularySchema.index({ id: 1 }); // Added label index
+    // vocabularySchema.index({ labels: 1 }); // Added label index
+    // vocabularySchema.index({ id: 1 }); // Added label index
 
     const Vocabulary = mongoose.model('Vocabulary', vocabularySchema);
 

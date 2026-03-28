@@ -32,7 +32,7 @@ const badgeSchema = new mongoose.Schema({
 });
 
 // Indexes
-badgeSchema.index({ 'criteria.type': 1 });
+// badgeSchema.index({ 'criteria.type': 1 });
 
 const Badge = mongoose.model('Badge', badgeSchema);
 
