@@ -1,4 +1,5 @@
 import { User } from "../../models/user.models.js";
+import jwt from "jsonwebtoken";
 
 function test(req,res) {
     console.log("test");
@@ -71,25 +72,37 @@ async function signUpUser(req,res) {
 }
 
 async function loginUser(req, res) {
-    const{email} = req.body;
+    const { email } = req.body;
 
-    const user = await User.findOne({email});
+    const user = await User.findOne({ email });
 
-    if(!user) {
+    if (!user) {
         return res.status(404).json({
             success: false,
             message: "User not found, please sign up",
-        })
+        });
     }
+
+    // Issue JWT
+    const token = jwt.sign({ userId: user.userId, email: user.email }, process.env.JWT_SECRET || 'dev_jwt_secret', { expiresIn: '7d' });
+
     res.status(200).json({
         success: true,
         message: "User logged in successfully",
-    })
-}
+        token
+    });
+} 
 
 async function getUserProfile(req, res) {
-    let{email} = req.body;
-    console.log("user progile");
+    let { email } = req.body;
+    // prefer authenticated email if provided via token
+    email = email || req.user?.email;
+
+    if (!email) {
+        return res.status(400).json({ success: false, message: 'Please provide email or authenticate' });
+    }
+
+    console.log("user profile");
     
    
     const user = await User.aggregate([
