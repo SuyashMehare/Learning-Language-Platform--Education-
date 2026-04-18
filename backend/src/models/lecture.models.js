@@ -30,7 +30,7 @@ import { CATEGORIES, DIFFICULTIES, LABELS } from "./enums.js";
     ],
     categories: {
       type: [String],
-      required: true,
+      default: [],
       enum: CATEGORIES
     },
     labels: {
@@ -44,12 +44,12 @@ import { CATEGORIES, DIFFICULTIES, LABELS } from "./enums.js";
     },
     difficulty: {
       type: String,
-      required: true,
+      default: 'A1',
       enum: DIFFICULTIES
     },
     points: {
       type: Number,
-      required: true,
+      default: 10,
       min: 10,
       max: 30,
       validate: {

@@ -5,13 +5,18 @@ import { User } from "../../models/user.models.js";
 async function getAllLectures(req, res) {
     const {email} = req.body;
     try {
-        const {preferences} = await User.findOne(
+        const user = await User.findOne(
             {userId: "user_" + email}, 
             {preferences: true}
         )
+
+        let filters = {};
+        if(user.preferences) {
+            filters.language = user.preferences.language;
+        }
         
         const lectures = await Lecture.find({
-            language: preferences.language,
+            ...filters,
             $or: [
                 { categories: { $in: preferences.targetCategories } },
                 { labels: { $in: preferences.targetLabels } || []},
