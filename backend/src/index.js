@@ -1,7 +1,20 @@
 import dotenv from "dotenv";
+import cors from "cors";
 import { app } from "./app.js";
 import { connectdb } from "./db/index.js";
+import { adminRouter } from "./routes/admin.routes.js";
+import { platformRouter } from "./routes/platform.routes.js";
+
 dotenv.config()
+
+app.use(cors({
+    origin: "*",
+    methods: "*",
+    allowedHeaders: "*",
+  }));
+
+app.use("/api/v1/admin", adminRouter);
+app.use("/api/v1/platform", platformRouter);
 
 connectdb()
 .then(() => {
