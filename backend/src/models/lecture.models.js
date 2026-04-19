@@ -36,7 +36,7 @@ import { CATEGORIES, DIFFICULTIES, LABELS } from "./enums.js";
     labels: {
       type: [String],
       default: [],
-      enum: LABELS
+      enum: LABELS // Labels are used as tags for lectures
     },
     duration: {
       type: Number,

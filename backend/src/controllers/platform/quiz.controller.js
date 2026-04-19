@@ -69,10 +69,39 @@ async function getAllRandomQuizzes(req, res) {
     }
 }
 
+async function getQuizOptions(req, res) {
+    try {
+        const quizzes = await Quiz.find(
+            {},
+            {
+                _id: 1,
+                id: 1,
+                question: 1,
+                language: 1,
+                difficulty: 1,
+            }
+        )
+            .sort({ createdAt: -1 })
+            .lean();
+
+        return res.status(200).json({
+            success: true,
+            data: quizzes,
+        });
+    } catch (error) {
+        console.log("Error while fetching quiz options:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Unable to fetch quizzes",
+        });
+    }
+}
+
 
 
 
 export {
     getAllInLectureQuizzes,
-    getAllRandomQuizzes
+    getAllRandomQuizzes,
+    getQuizOptions
 }

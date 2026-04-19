@@ -11,17 +11,21 @@ import {
 
 import { 
     getAllInLectureQuizzes, 
-    getAllRandomQuizzes 
+    getAllRandomQuizzes,
+    getQuizOptions
 } from "../controllers/platform/quiz.controller.js";
 
 import { 
-    getMetaData 
+    getMetaData,
+    getAllTags
 } from "../controllers/platform/metadata.controller.js";
 
 const route =  Router()
 
 route.get("/lectures", getAllLectures)
 route.get("/metadata", getMetaData)
+route.get("/tags", getAllTags)
+route.get("/quizzes", getQuizOptions)
 
 
 route.post("/quizzes/inlecture", getAllInLectureQuizzes)

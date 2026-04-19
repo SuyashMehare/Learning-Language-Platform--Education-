@@ -19,6 +19,14 @@ async function getMetaData(req, res) {
     })
 }
 
+async function getAllTags(req, res) {
+    return res.status(200).json({
+        success: true,
+        data: LABELS,
+    });
+}
+
 export {
-    getMetaData
+    getMetaData,
+    getAllTags
 }
